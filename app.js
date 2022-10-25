@@ -59,27 +59,28 @@ var url = "";
 async function databaseFunc() {
 
     // Add a new document with a generated id.
+    if (url === "") {
+        url = "download (1).png"
+    }
     const docRef = await addDoc(collection(db, "usersdata"), {
 
         name: name.value,
         email: email.value,
         password: password.value,
-        picURl: url
+        picURl: url,
+        uid: auth.currentUser.uid
     });
 
-   
 
 }
 let fileUpload = document.querySelector("#fileUploader");
-// var url = ""
 
 fileUpload.addEventListener("change", storageFunc);
 async function storageFunc() {
     let file = fileUpload.files[0];
-    let imageRef = ref(storage, `images/${file.name}`);
+    let imageRef = ref(storage, `images/${auth.currentUser.uid}`);
     let uploaded = await uploadBytes(imageRef, file);
     url = await getDownloadURL(imageRef);
-    console.log(url)
 }
 
 
@@ -89,25 +90,58 @@ signin.addEventListener("click", signinFunc);
 
 async function signinFunc() {
 
-  let email = document.querySelector("#your_email");
-  let password = document.querySelector("#your_pass");
-  let name = document.querySelector("#name");
+    let email = document.querySelector("#your_email");
+    let password = document.querySelector("#your_pass");
+    let name = document.querySelector("#name");
 
 
-  signInWithEmailAndPassword(auth, email.value, password.value)
-    .then((userCredential) => {
-      // Signed in 
-      const user = userCredential.user;
-    //   location = "chatbox.html"
-      console.log(user)
+    signInWithEmailAndPassword(auth, email.value, password.value)
+        .then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            location = "chatbox.html"
+            console.log(user)
 
-      // ...
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      swal("Error!", errorMessage, "error")
+            // ...
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            swal("Error!", errorMessage, "error")
 
-    });
+        });
 
 }
+
+
+
+
+
+let signUpLink = document.querySelector("#signUpLink")
+signUpLink.addEventListener("click", UserAlreadyCreated)
+
+function UserAlreadyCreated() {
+    let signupContainer = document.querySelector("#Signup-Container")
+    signupContainer.style.visibility = "hidden"
+
+    let siginContainer = document.querySelector("#sigin-Container")
+    siginContainer.style.visibility = "visible"
+
+
+}
+
+
+let signInImageLink = document.querySelector("#signInImageLink")
+signInImageLink.addEventListener("click", alreadyAccount)
+
+function alreadyAccount() {
+    let siginContainer = document.querySelector("#sigin-Container")
+    siginContainer.style.visibility = "hidden"
+
+    let signupContainer = document.querySelector("#Signup-Container")
+    signupContainer.style.visibility = "visible"
+}
+
+
+
+

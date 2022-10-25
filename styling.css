@@ -31,9 +31,6 @@ li{
     font-weight: lighter;
     
 }
-input{
-    border-radius: 20px;
-}
 form {
     color: #555;
     display: flex;
@@ -57,39 +54,63 @@ form {
   input[type="search"]::placeholder {
     color: #bbb;
   }
+
+button{
+  border: transparent;
+  background-color: transparent;
+  display: block;
+}
+
+
+
+#messageBar{
+  margin-top: 630px;
+  background-color: aliceblue;
   
-  button[type="submit"] {
-    text-indent: -999px;
-    overflow: hidden;
-    width: 40px;
-    padding: 0;
-    margin: 0;
-    border: 1px solid transparent;
-    border-radius: inherit;
-    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
-    cursor: pointer;
-    opacity: 0.7;
-  }
-  
-  button[type="submit"]:hover {
-    opacity: 1;
-  }
-  
-  button[type="submit"]:focus,
-  input[type="search"]:focus {
-    box-shadow: 0 0 3px 0 #1183d6;
-    border-color: #1183d6;
-    outline: none;
-  }
-  
-  form.nosubmit {
-   border: none;
-   padding: 0;
-  }
-  
-  input.nosubmit {
-    border: 1px solid #555;
-    width: 100%;
-    padding: 9px 4px 9px 40px;
-     background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center;
-  }
+}
+
+.send {
+  height: 40px;
+  width: 40px;
+  background: rgb(255, 255, 255);
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+  border-color: black black black transparent;
+  border-radius:0 10px 10px 0 ;
+
+}
+
+#txt {
+  height: 40px;
+  /* width: 60%; */
+  background: white;
+  color: black;
+  border: 1px solid;
+  border-color: black transparent black black;
+  outline: none;
+  font-size: 20px;
+  font-weight: lighter;
+  border-radius: 10px 0 0 10px;
+
+}
+.msgingImg{
+  width: 30px;
+  height: 30px;
+  margin-top: -8px;
+}
+p{
+background-color: white;
+padding: 15px;
+border-radius: 20px;
+}
+
+.msgSend{
+  margin-left: 400px;
+}
+.msgRecieve{
+  margin-right: auto;
+}
+li{
+  margin-top: 40px;
+}
