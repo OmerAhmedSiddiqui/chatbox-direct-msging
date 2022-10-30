@@ -1,0 +1,21 @@
+#profile-img{
+    width: 200px;
+    border: 2px solid black;
+    border-radius: 50px;
+    padding: 10px;
+    height: 200px;
+  }
+  .profileLabel{
+    font-size: 30px;
+  }
+  
+  
+  
+  #profileCol{
+    /* display: flex;
+    justify-content: center; */
+    /* align-items: center; */
+    margin: auto;
+    margin-top: 150px;
+    
+  }

@@ -1,12 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SignUp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="styling2.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+
+
+
 </head>
+
 <body>
-    hello
+
+
+    <div class="container">
+        <div class="row ">
+            <div class="col-lg-6  border " id="profileCol">
+                <form class="form">
+
+                    <div class="row">
+
+                        <div class="m-auto">
+                            <label for="profile-pic" class="profileLabel">
+                                <img src="images/account_avatar_person_profile_user_human_add_new-512.webp" alt="profile-img"
+                                    id="profile-img" class=" m-auto">
+                                <input type="file" id="profile-pic" style="display: none;">
+                            </label>
+                        </div>
+                    </div>
+                    <br />
+                    <label for="FNAme" class="profileLabel">
+                        First Name
+                        <input type="text" id="FNAme">
+                    </label>
+                    <br />
+
+                    <label for="SName" class="profileLabel">
+                        Last Name
+                        <input type="text" id="SName">
+                    </label>
+                    <br />
+
+                    <label for="Email" class="profileLabel">
+                        Email &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="text" id="Email">
+                    </label>
+                    <br />
+
+                    <label for="password" class="profileLabel">
+                        Password &nbsp;
+                        <input type="password" id="password" autocomplete="on">
+                    </label>
+
+                    <div class="ml-auto"> <button id="Create" class="btn btn-primary m-3" type="reset"> Create
+                            Account</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
 </body>
+
 </html>
